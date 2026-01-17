@@ -1,125 +1,173 @@
-**Projeto Jurisconsulto**
+# <span style="font-size:20pt"><b>Portfólio de Projetos de Banco de Dados</b></span>
 
-Jurisconsulto é um projeto que trabalha com modelagem, inserção, consulta de dados estruturados e a criação de um Sistema de gerenciamento de clientes de um escritíório de advocacia.
+## Projetos Incluídos
 
-**Resumo do Projeto**
+1. **Fundamentos de SQL**  
+2. **Jurisconsulto**  
 
-**O Problema**
+---
 
-⦁Um escritório de advocacia tinha uma série de dados de seus clientes e precisava organizar informações pessoais, endereços, dos processos e dos réus. Além disso precisava obter dados sobre ações mais comuns, cliente e processo, os que ajuizaram ações de cobrança e de indenização, o número por estado e processos ativos para entregar para o estagiário fazer a visualização de dados. Outra questão era que os advogados perdiam muito tempo qualificando as partes quando redigiam suas Petições Iniciais.
+# <span style="font-size:20pt"><b>Projeto: Fundamentos de SQL</b></span>
 
-**Execução do Projeto**
+## Sobre o Projeto
 
-⦁A solução cabia em um projeto de dados
+Este projeto foi desenvolvido para demonstrar conhecimentos fundamentais de **SQL** aplicados em um cenário real de **gestão escolar**. O objetivo foi criar um banco de dados completo com tabelas de alunos, professores, disciplinas, turmas, matrículas e avaliações, utilizando **BigQuery** como ambiente de execução.  
 
-⦁O Primeiro passo foi a utilização da ferramenta MYSQL. Um primeiro script Tables.sql foi criado com um banco de dados chamado cadastro\_clientes e quatro tabelas foram : clientes, enderecos, processos e reus, fazendo a modelagem dos dados;
+O projeto foi dividido em cinco partes principais, cada uma representando uma categoria de comandos SQL:  
 
-⦁Depois, um segundo script data\_insert.sql, no qual foram inseridos os dados dos clientes nas quatro tabelas, organizando as informações;
+---
 
-⦁Com as informações organizadas, era possível obter as aquelas requeridas ao estagiário a partir da consulta de dados. Para isso, um terceiro script data\_visualization.sql utilizando as variações dos comandos SELECT e JOIN. Todos os resultados foram exportados no formato .CSV e entregues ao estagiário;
+## **1. DDL (Data Definition Language)**
 
-⦁Para Entender melhor o Banco, foi criado um Um Diagrama de Entidade-Relacionamento do banco de dados;
+- Criação de **dataset** e **tabelas**.  
+- Alterações em colunas e adição de descrições.  
+- Comandos utilizados: `CREATE TABLE`, `ALTER TABLE`, `DROP TABLE`.  
 
-⦁Para facilitar e manter os dados organizados, foi criado uma aplicação de linha de comando em Python Jurisconsulto.py integrado ao MYSQL utilizando o mysql-connector-python que permite a inserção de dados direto do terminal para o banco de dados cadastro\_clientes. Também é possível a consulta de todos os dados do Cliente apenas digitando o seu nome em formato de tabela, utilizando o tabulate;
+---
 
-⦁Para resolver o problema da Qualificação das Partes na Petição Inicial, foi criada uma função dentro do Jurisconsulto.py que permite a criação automática e que exporta um documento no formato .txt.
+## **2. DML (Data Manipulation Language)**
 
-**Tecnologias Utilizadas**
+- Inserção de registros com `INSERT`.  
+- Modificação de dados com `UPDATE`.  
+- Remoção de dados com `DELETE` e `TRUNCATE`.  
 
-⦁**MySQL**: Sistema de gerenciamento de banco de dados.
+---
 
-⦁**SQL**: Linguagem para a criação e manipulação do banco de dados.
+## **3. DQL (Data Query Language)**
 
-⦁**Python**: Linguagem de programação principal.
+- Consultas simples e filtradas (`SELECT`, `WHERE`).  
+- Agregações e condições (`GROUP BY`, `HAVING`).  
+- Ordenações (`ORDER BY`).  
+- Relacionamento entre tabelas com `JOIN`.  
 
-⦁**mysql-connector-python:** Biblioteca Python para conexão com o MySQL.
+---
 
-⦁**tabulate**: Biblioteca Python para exibir dados em formato de tabela.
+## **4. DCL (Data Control Language)**
 
-**Estrutura do Projeto**
+- Controle de permissões e segurança (`GRANT`, `REVOKE`).  
+- Controle em nível de **dataset** e **tabela**.  
 
-**1 - Banco de Dados Estruturados SQL**
+---
 
-⦁**/Scripts**: scripts em SQL com dados
+## **5. DTL (Data Transaction Language)**
 
-⦁**Tables.sql**: Script SQL para a criação das tabelas no banco de dados (clientes, enderecos, processos, reus).
+- Controle de transações (`BEGIN TRANSACTION`, `COMMIT`, `ROLLBACK`).  
+- Garantia de **integridade e consistência** em múltiplas operações DML.  
 
-⦁**data\_Insert.sql**: Script SQL que insere os dados de exemplo para popular as tabelas.
+---
 
-⦁**data\_visualization.sql**: Script SQL Consultas SQL de para gerar relatórios e análises sobre os dados, como o número de clientes por estado ou o tipo de ação mais comum.
+## **Tecnologias Utilizadas**
 
-⦁**/Docs**: outros documentos
+- **SQL**: Linguagem para manipulação, definição, consulta e controle de dados.  
+- **BigQuery**: Ambiente de execução em nuvem para armazenamento e análise de dados.  
+- **Google Cloud Platform (GCP)**: Gerenciamento de datasets e exportação de resultados.  
 
-⦁**CSV results**: Pasta com arquivos CSV dos resultados das consultas feitas no script data\_visualization.sql
+---
 
-⦁**/ERD**:
+# <span style="font-size:20pt"><b>Projeto: Jurisconsulto</b></span>
 
-⦁**ERD.PNG**: arquivo de imagem com um Um Diagrama de Entidade-Relacionamento do banco de dados
+## Sobre o Projeto
 
-**2 - Aplicação em Python**
+**Jurisconsulto** é um projeto que trabalha com **modelagem, inserção e consulta de dados estruturados**, além da criação de um **Sistema de Gerenciamento de Clientes** para um escritório de advocacia.  
 
-⦁**/Jurisconsulto\_ap**p:
+O objetivo foi organizar informações de clientes, endereços, processos e réus, permitindo consultas rápidas e geração automática de qualificações de petições iniciais.
 
-⦁j**urisconsulto.py**: é uma aplicação de linha de comando desenvolvida em Python para auxiliar advogados e escritórios de advocacia na gestão de seus clientes e processos
+---
 
-**Instruções da aplicação Jurisconsulto.py**
+## **Resumo do Projeto**
 
-**Funcionalidades**
+### O Problema
 
-⦁Cadastro Completo: Insere dados de clientes, seus endereços, processos e réus.
+- Organizar informações pessoais, endereços, processos e réus.  
+- Obter dados sobre ações mais comuns, clientes e processos:  
+  - Clientes que ajuizaram ações de cobrança e indenização.  
+  - Número de processos por estado.  
+  - Processos ativos para análise de dados por estagiários.  
+- Reduzir tempo gasto pelos advogados na **qualificação de partes** ao redigir Petições Iniciais.  
 
-⦁Consultas Rápidas: Permite buscar clientes pelo nome e visualizar seus dados de forma organizada.
+### Execução do Projeto
 
-⦁Geração Automática de Documentos: Cria qualificações de petições iniciais com base nos dados cadastrados, agilizando o trabalho.
+1. Criação do banco de dados `cadastro_clientes` e quatro tabelas: **clientes, enderecos, processos, reus** (`Tables.sql`).  
+2. Inserção de dados nas tabelas (`data_insert.sql`).  
+3. Consultas e geração de relatórios (`data_visualization.sql`) com `SELECT` e `JOIN`, exportados em **CSV**.  
+4. Criação de um **Diagrama de Entidade-Relacionamento (ERD)**.  
+5. Desenvolvimento de **Jurisconsulto.py**, aplicação de linha de comando em Python, integrando-se ao MySQL:  
+   - Inserção de dados via terminal.  
+   - Consulta de clientes digitando apenas o nome.  
+   - Exibição organizada em tabela (`tabulate`).  
+6. Função para **geração automática de qualificações de petições iniciais**, exportando arquivos `.txt`.  
 
-⦁Visualização de Dados: Inclui scripts SQL para gerar relatórios e análises, como a quantidade de clientes por estado ou o tipo de ação mais comum.
+---
 
-**Configuração e Instalação**
+## **Tecnologias Utilizadas**
 
-Para rodar o projeto em seu ambiente local, siga estes passos.
+- **MySQL**: Sistema de gerenciamento de banco de dados.  
+- **SQL**: Criação e manipulação do banco de dados.  
+- **Python**: Linguagem principal para a aplicação.  
+- **mysql-connector-python**: Conexão Python com MySQL.  
+- **tabulate**: Exibição de dados em tabela no terminal.  
 
-**1\. Pré-requisitos**
+---
 
-Certifique-se de ter o Python e o MySQL instalados em sua máquina.
+## **Estrutura do Projeto**
 
-**2\. Configuração do Banco de Dados**
+### Banco de Dados
 
-⦁Acesse seu servidor MySQL.
+- **/Scripts**  
+  - `Tables.sql`: Criação das tabelas (**clientes, enderecos, processos, reus**).  
+  - `data_insert.sql`: Inserção de dados de exemplo.  
+  - `data_visualization.sql`: Consultas SQL para relatórios e análises.  
+- **/Docs**  
+  - `CSV results`: Arquivos CSV dos resultados das consultas.  
+- **/ERD**  
+  - `ERD.PNG`: Diagrama de Entidade-Relacionamento.  
 
-⦁Execute o script Tables.sql para criar o banco de dados cadastro\_clientes e todas as tabelas necessárias:
+### Aplicação em Python
 
-⦁(Opcional) Para popular as tabelas com dados de exemplo, execute o script data\_Insert.sql:
+- **/Jurisconsulto_app**  
+  - `Jurisconsulto.py`: Linha de comando para gestão de clientes e processos.  
 
-**3\. Configuração do Ambiente Python**
+---
 
-⦁Baixe os arquivos do projeto.
+## **Instruções da Aplicação Jurisconsulto.py**
 
-⦁Instale as bibliotecas Python necessárias com pip:
+### Funcionalidades
 
-pip install mysql-connector-python
+- Cadastro completo de clientes, endereços, processos e réus.  
+- Consultas rápidas de clientes pelo nome.  
+- Geração automática de qualificações de petições iniciais (`.txt`).  
+- Visualização de dados: relatórios por estado ou tipo de ação mais comum.  
 
-pip install tabulate
+### Configuração e Instalação
 
-⦁No arquivo Juriconsulto.py, configure os dados de conexão com seu banco de dados (host, usuário, senha, etc.).
+1. Certifique-se de ter **Python** e **MySQL** instalados.  
+2. Execute `Tables.sql` para criar o banco e tabelas.  
+3. (Opcional) Execute `data_insert.sql` para popular as tabelas.  
+4. Instale bibliotecas Python:  
+   ```bash
+   pip install mysql-connector-python
+   pip install tabulate
+5. Configure a conexão com o MySQL no arquivo `Jurisconsulto.py`, definindo:  
 
-**Como Usar**
+```python
+host = "seu_host"
+user = "seu_usuario"
+password = "sua_senha"
+database = "cadastro_clientes"
+## Como Usar
 
-Execute o arquivo principal Jurisconsulto.py no terminal para iniciar a aplicação:\]
+Execute o arquivo principal `Jurisconsulto.py` no terminal. O menu exibirá as seguintes opções:
 
-**O menu principal será exibido com as seguintes opções:**
+1. **Cadastrar cliente**: Inicia o cadastro completo de clientes, endereços, processos e réus.  
+2. **Consultar cadastro do cliente**: Busca e exibe os dados de um cliente de forma organizada.  
+3. **Criar qualificação de petição inicial**: Gera automaticamente um documento `.txt` com a qualificação para petição.  
+0. **Sair**: Encerra a aplicação.  
 
-**1 - Cadastrar cliente: Inicia o processo de cadastro completo.**
+---
 
-**2 - Consultar cadastro do cliente: Busca e exibe os dados de um cliente.**
+## Desenvolvedor do Projeto
 
-**3 - Criar qualificação de petição inicial: Gera um texto de qualificação para petição.**
-
-**0 - Sair: Encerra o programa.**
-
-**Desenvolvedor do projeto:**
-
-João Henrique Pereira da Penha
-
-jhppenha@gmail.com
-
-https://github.com/joaohppenha
+**João Henrique Pereira da Penha**  
+- Email: jhppenha@gmail.com  
+- GitHub: [https://github.com/joaohppenha]
+(https://github.com/joaohppenha)
