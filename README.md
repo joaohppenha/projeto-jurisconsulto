@@ -144,29 +144,26 @@ O objetivo foi organizar informações de clientes, endereços, processos e réu
 2. Execute `Tables.sql` para criar o banco e tabelas.  
 3. (Opcional) Execute `data_insert.sql` para popular as tabelas.  
 4. Instale bibliotecas Python:  
-   ```bash
+
    pip install mysql-connector-python
    pip install tabulate
+   
 5. Configure a conexão com o MySQL no arquivo `Jurisconsulto.py`, definindo:  
-
-```python
 host = "seu_host"
 user = "seu_usuario"
 password = "sua_senha"
 database = "cadastro_clientes"
+
 ## Como Usar
 
 Execute o arquivo principal `Jurisconsulto.py` no terminal. O menu exibirá as seguintes opções:
-
 1. **Cadastrar cliente**: Inicia o cadastro completo de clientes, endereços, processos e réus.  
 2. **Consultar cadastro do cliente**: Busca e exibe os dados de um cliente de forma organizada.  
 3. **Criar qualificação de petição inicial**: Gera automaticamente um documento `.txt` com a qualificação para petição.  
 0. **Sair**: Encerra a aplicação.  
 
 ---
-
 ## Desenvolvedor do Projeto
-
 **João Henrique Pereira da Penha**  
 - Email: jhppenha@gmail.com  
 - GitHub: [https://github.com/joaohppenha]
